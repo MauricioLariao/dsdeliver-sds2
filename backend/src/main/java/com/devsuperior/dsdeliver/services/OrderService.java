@@ -45,4 +45,14 @@ public class OrderService {
 		order = repository.save(order);
 		return new OrderDTO(order);
 	}
+	
+	//getOne -> instancia um objeto monitorado pelo jpa sem mxer no banco de dados
+	@Transactional 
+	public OrderDTO setDelivered(Long id){
+		Order order = repository.getOne(id);
+		order.setStatus(OrderStatus.DELIVERED);
+		order = repository.save(order);
+		return new OrderDTO(order);
+ 	}
+	
 }
