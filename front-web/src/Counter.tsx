@@ -2,7 +2,7 @@ import { useState } from "react";
 
 function Counter (){
 
-  //conceito de estado
+  //conceito de estado, que funciona como uma variavel
   const [counter, setCounter] = useState(0);
 
   const handleIncrease = () => {
